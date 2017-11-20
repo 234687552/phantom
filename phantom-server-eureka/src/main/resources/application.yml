@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: phantom-server-eureka
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 60000
+    #TODO 生产时打开此选项
+    enable-self-preservation: false
+
+#安全配置
+security:
+  basic:
+    enabled: true
+  user:
+    name: kingboy
+    password: 123456
+#默认启动节点
+---
+server:
+  port: 7000
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#node1 server
+---
+spring:
+  profiles: node1
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: node1
+  client:
+    service-url:
+      defaultZone: http://node2:7002/eureka/
+#node2 server
+---
+spring:
+  profiles: node2
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: node2
+  client:
+    service-url:
+      defaultZone: http://node1:7001/eureka/
+
+

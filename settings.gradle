@@ -1,0 +1,13 @@
+rootProject.name = 'phantom'
+include 'phantom-server-eureka'
+include 'phantom-server-turbine'
+include 'phantom-server-hystrix'
+include 'phantom-server-config'
+include 'phantom-service-provider'
+include 'phantom-service-consumer'
+
+include 'phantom-service-provider-conf'
+include 'phantom-service-consumer-conf'
+
+include 'common'
+

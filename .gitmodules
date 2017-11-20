@@ -1,0 +1,27 @@
+[submodule "phantom-server-eureka"]
+	path = phantom-server-eureka
+	url = https://github.com/KingBoyWorld/phantom-server-eureka.git
+[submodule "phantom-service-provider"]
+	path = phantom-service-provider
+	url = https://github.com/KingBoyWorld/phantom-service-provider.git
+[submodule "phantom-service-consumer"]
+	path = phantom-service-consumer
+	url = https://github.com/KingBoyWorld/phantom-service-consumer.git
+[submodule "common"]
+	path = common
+	url = https://github.com/KingBoyWorld/common.git
+[submodule "phantom-server-turbine"]
+	path = phantom-server-turbine
+	url = https://github.com/KingBoyWorld/phantom-server-turbine.git
+[submodule "phantom-server-hystrix"]
+	path = phantom-server-hystrix
+	url = https://github.com/KingBoyWorld/phantom-server-hystrix.git
+[submodule "phantom-service-provider-conf"]
+	path = phantom-service-provider-conf
+	url = https://github.com/KingBoyWorld/phantom-service-provider-conf.git
+[submodule "phantom-service-consumer-conf"]
+	path = phantom-service-consumer-conf
+	url = https://github.com/KingBoyWorld/phantom-service-consumer-conf.git
+[submodule "phantom-server-config"]
+	path = phantom-server-config
+	url = https://github.com/KingBoyWorld/phantom-server-config.git

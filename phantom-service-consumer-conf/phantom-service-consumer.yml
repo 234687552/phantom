@@ -1,0 +1,22 @@
+info:
+  app:
+    name: ${spring.application.name}
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: true
+  #启用压缩
+  compression:
+    request:
+      mime-types: application/json
+      min-request-size: 1024
+#关闭超时检查
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false

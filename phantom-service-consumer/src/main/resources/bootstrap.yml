@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: phantom-service-consumer
+  cloud:
+    config:
+      username: kingboy
+      password: 123456
+      fail-fast: true
+      retry:
+        initial-interval: 3000
+      discovery:
+        enabled: true
+        service-id: phantom-server-config
+server:
+  port: 8001
+eureka:
+  auth:
+    user: kingboy
+    password: 123456
+  client:
+    service-url:
+      #TODO 生产环境中配置高可用 http://${eureka.auth.user}:${eureka.auth.password}@localhost:7001/eureka/,http://${eureka.auth.user}:${eureka.auth.password}@localhost:7002/eureka/
+      defaultZone: http://${eureka.auth.user}:${eureka.auth.password}@localhost:7000/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}

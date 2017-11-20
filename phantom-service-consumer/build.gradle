@@ -1,0 +1,56 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.kingboy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+ext {
+    springCloudVersion = 'Dalston.SR4'
+    swaggerVersion='2.7.0'
+    EncodeVersion='4.11'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+    compile("io.springfox:springfox-swagger2:${swaggerVersion}")
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.retry:spring-retry')
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile("net.logstash.logback:logstash-logback-encoder:$EncodeVersion")
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'org.glassfish.jersey.core:jersey-client:2.26'
+
+    compile project(':common')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
