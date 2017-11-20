@@ -4,10 +4,12 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/provider?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:log4jdbc:mysql://localhost:3306/provider?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.jdbc.Driver
+#更改使用log4jdbc 来使参数打印出来   参考http://blog.csdn.net/blueheart20/article/details/52382052
+    driver-class-name: net.sf.log4jdbc.DriverSpy
     platform: mysql
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
