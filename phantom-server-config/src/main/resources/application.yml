@@ -10,6 +10,7 @@ spring:
           password: lzd3860875
           default-label: master
           search-paths: '{application}-conf'
+#
 #http://localhost:7005/phantom-service-provider/master
 server:
   port: 7005
