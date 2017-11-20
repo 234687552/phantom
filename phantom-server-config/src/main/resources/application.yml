@@ -5,11 +5,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/KingBoyWorld/{application}-conf
-          username: kingboyworld
-          password: kingboy1013!
+          uri: https://github.com/234687552/phantom
+          username: 234687552@qq.com
+          password: lzd3860875
           default-label: master
-
+          search-paths: '{application}-conf'
+#http://localhost:7005/phantom-service-provider/master
 server:
   port: 7005
 
